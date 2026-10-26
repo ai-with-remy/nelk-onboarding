@@ -28,6 +28,26 @@ to explain yourself again."
 Never explain what AGENTS.md is unless they ask. If they ask, one line: "It's
 the file that tells the AI how to use the rest of the folder."
 
+## Claude or Codex
+
+This skill runs in both Claude (the Claude app and Claude Code) and Codex. Work
+out which one you're in from the session itself, not from which apps happen to
+be installed, then stick to that app's wording for the whole run:
+
+| | Claude | Codex |
+|---|---|---|
+| Run this again | `/onboard` (full name `/nelk:onboard`) | `$nelk:onboard`, or just say "onboard me" |
+| Asking questions | Use the multiple-choice question tool if there is one, with the examples as options plus "something else" | Ask in chat with the examples as a short numbered list. They can reply with a number or their own words |
+
+Never show a Claude command to a Codex user or a Codex command to a Claude
+user.
+
+**Codex and writing files:** Codex may pop up a permission request before it
+writes outside the folder it's working in (for example, the Desktop). Say it in
+one line before the first write: "You'll get a quick pop-up asking to save the
+file. Just approve it." If writing there is blocked, create `AI Context` inside
+the folder Codex is working in and tell them the full path.
+
 ## How to run the interview
 
 - **One question at a time.** Wait for the answer before asking the next one.
@@ -49,7 +69,7 @@ the file that tells the AI how to use the rest of the folder."
 
 1. Work out where to put the folder:
    - If this session is working in a folder the person picked (common in the
-     Claude app), create `AI Context` inside that folder.
+     Claude app and the Codex app), create `AI Context` inside that folder.
    - Otherwise create it on their Desktop. On Windows, the Desktop may live
      under OneDrive (`%USERPROFILE%\OneDrive\Desktop`); use whichever Desktop
      actually exists.
@@ -179,7 +199,8 @@ plain words:
 >
 > Do that for any project you work in. Every chat in that project now knows
 > who you are, how you write and how Nelk works. If something changes, run
-> /onboard again and I'll update the folder."
+> [/onboard in Claude, or $nelk:onboard in Codex: show only the one for this
+> app] again and I'll update the folder."
 
 Keep the wrap-up to that. Don't explain Markdown, AGENTS.md or how projects
 load files unless they ask.

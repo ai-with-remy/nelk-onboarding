@@ -17,13 +17,18 @@ install the `nelk` plugin, then type `/onboard` in a new chat.
 /plugin install nelk@nelk-onboarding
 ```
 
-**Codex:**
+Then start a new chat and type `/onboard`.
+
+**Codex**, run these one at a time in a terminal:
 
 ```text
 codex plugin marketplace add ai-with-remy/nelk-onboarding
+codex plugin add nelk@nelk-onboarding
 ```
 
-Then open `/plugins`, install `nelk`, and start a new session.
+Then start a new Codex chat and type `$nelk:onboard`, or just say "onboard
+me". You can also type `/skills` and pick `nelk:onboard`. In the Codex app you
+can install it from **Settings → Plugins** instead of the terminal.
 
 ## What it builds
 
@@ -37,8 +42,27 @@ AI Context/
 └── working-style.md
 ```
 
-Run `/onboard` again anytime to update the folder. In Claude Code the full
-name is `/nelk:onboard`; in Codex it is `$nelk:onboard`.
+Run it again anytime to update the folder:
+
+| | Claude | Codex |
+|---|---|---|
+| Run the interview | `/onboard` (full name `/nelk:onboard`) | `$nelk:onboard` or "onboard me" |
+
+## Updating
+
+**Claude** updates the plugin on its own. To force it:
+
+```text
+/plugin marketplace update nelk-onboarding
+```
+
+**Codex** doesn't update on its own. Ask Codex to run this, then start a new
+chat:
+
+```text
+codex plugin marketplace upgrade nelk-onboarding
+codex plugin add nelk@nelk-onboarding
+```
 
 ## Layout
 
@@ -51,3 +75,6 @@ nelk-onboarding/
     ├── .codex-plugin/plugin.json
     ├── plugin.json
     └── skills/onboard/
+
+scripts/smoke_codex_install.sh   clean-room Codex install test
+```

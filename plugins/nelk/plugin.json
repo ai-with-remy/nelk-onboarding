@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nelk",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Nelk onboarding by AI with Remy. Run /onboard: a short interview that builds your AI Context folder to upload into your Claude and ChatGPT projects.",
   "author": {
     "name": "AI with Remy",
