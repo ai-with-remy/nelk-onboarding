@@ -47,7 +47,6 @@ MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 AI_OS_SKILL_NAMES = (
     "build-context",
     "build-os",
-    "connect",
 )
 AI_OS_SKILL_PATTERN = "|".join(re.escape(name) for name in AI_OS_SKILL_NAMES)
 CLAUDE_NAMESPACED_INVOCATION_RE = re.compile(

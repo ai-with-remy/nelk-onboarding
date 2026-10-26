@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AI_OS = ROOT / "plugins" / "ai-os"
 SKILLS = AI_OS / "skills"
 EXPECTED_PLUGINS = {
-    "ai-os": ("1.0.0", 3),
+    "ai-os": ("1.0.1", 2),
 }
 
 
@@ -112,7 +112,7 @@ class AiOsSkillContractTests(unittest.TestCase):
             self.assertIn("Remy or Mav", text)
 
     def test_layout_consumers_use_resolved_master_and_memory(self) -> None:
-        for name in ("build-context", "connect"):
+        for name in ("build-context",):
             text = self.read_skill(name)
             self.assertIn("shared/workspace-layout.md", text, name)
             self.assertIn("MASTER_PATH", text, name)
@@ -175,7 +175,7 @@ class AiOsSkillContractTests(unittest.TestCase):
         )
         versions = {json.loads(path.read_text())["version"] for path in paths}
         self.assertEqual(len(versions), 1)
-        self.assertEqual(versions, {"1.0.0"})
+        self.assertEqual(versions, {"1.0.1"})
 
     def test_marketplaces_ship_exactly_the_first_party_plugins(self) -> None:
         for path in (

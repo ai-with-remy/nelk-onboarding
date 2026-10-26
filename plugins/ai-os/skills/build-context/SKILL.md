@@ -75,7 +75,7 @@ to sort it out with them.
 - **If onboarding IS complete:** great. Read what it captured — the `student` block (name, platform, os_root, timezone) and the `answers_captured` from onboard's own resume state / completion, if present. These are your PRE-FILLS. Hold them; you'll show each one back to the student rather than asking for it again.
 
 - **If the internal `sessions.context` entry is already `"complete"`:** offer to re-run or move on.
-  > "Looks like you've already built your brain in a previous session. Want to sharpen anything, or jump to [the active host's connect skill]?"
+  > "Looks like you've already built your brain in a previous session. Want to sharpen anything?"
 
 - **If the internal `sessions.context` entry is `"in_progress"` with a `resume_state`:** offer to resume.
   > "Looks like we got partway through this last time — we were on [phase / file]. Want to pick up from there, or start fresh?"
@@ -202,10 +202,6 @@ This is the one file with nothing pre-filled from onboard (voice was deliberatel
 - **Ask for real writing samples — this is the single best signal. Use the per-category ask below and keep it whole, never trim it.** Since tools aren't connected yet, they paste:
   > "Now the best part: paste me a couple of real things you've written — one or two from each of these, whatever you actually have: Slack or chat messages to your team · casual emails to people you know · formal emails to clients · social posts or blog writing. One thing that matters: **pick things you actually wrote yourself — not AI-polished stuff — so I capture YOUR style, not a robot's.** Rough is perfect; even a few lines from each helps."
   Capture verbatim into the Writing Samples section, labelled by category (the categories often reveal different registers — casual with the team, formal with clients — capture that split; it's gold). If they have none, note it and add the timeless line from the template ("Samples still to add — paste writing samples here anytime and ask me to update your voice file"). Never fabricate a sample.
-- **The connect shortcut (offer it ONCE, right after the paste ask — a sidebar, not a new phase).** Many students don't have samples at hand, and their own sent emails are the best voice data that exists. Offer, casually:
-  > "Or — if it's easier than digging for examples — we can connect your email right now and I'll pull a few short excerpts from things you've actually sent. You approve a sign-in in your browser, I only look at your **sent** messages, and you get final say on every excerpt before anything goes in your file."
-  **If they say yes:** read `<PLUGIN_ROOT>/skills/connect/SKILL.md` and use its Phase 3 path for the detected host. Claude may use claude.ai Connectors; Codex must use its plugin/connector flow and never be sent to Claude UI. Then enforce all gates: **SENT items only**, a handful of short excerpts, and explicit keep/bin approval before any writing. Record the verified connection so connect reconciles instead of repeating it.
-  **If they decline, or the sign-in fails:** shrug warmly and fall back to the paste flow — zero cost, no second ask; connecting properly is Tools module's job anyway.
 - Preview the whole file (it's long — that's fine) and get a yes before writing.
 
 **If the student gives a one-word answer, wants to skip, or seems confused:** handle exactly per the interaction-contract fallback table. A skip is fine — note that they can fill it in later by asking their agent to update that context file.
@@ -231,7 +227,7 @@ Then deepen, one light pass (don't turn this into an audit):
 Write the result into the `## Tools` section of `working-style.md` per the
 template in `core-six-templates.md` §4. Also keep the slim `job → tool` map in
 resolved `MASTER_PATH` in sync.
-> "That's your tools legend. Tools module ([show only Claude `/ai-os:connect` or Codex `$ai-os:connect` for the detected host]) uses exactly this list — so instead of starting from a blank page, we already know what to wire up and how you use it."
+> "That's your tools legend. When we connect your apps, we work from exactly this list — so instead of starting from a blank page, we already know what to wire up and how you use it."
 
 Preview before writing, per the Hard Gate. Update progress.
 
@@ -445,7 +441,7 @@ Recap what was built and why, then point to the next session.
 
 1. **Update the progress file to complete:** set the internal
    `sessions.context.status = "complete"`, `completed_at = now`, remove
-   `resume_state`, and set `next_skill = "connect"`. Write it.
+   `resume_state`, and set `next_skill = null`. Write it.
 
 2. **The recap** (keep it warm and concrete):
 
@@ -465,13 +461,11 @@ Recap what was built and why, then point to the next session.
    >
    > Two things to remember:
    > - Start your AI inside your OS folder — that's the one habit that makes all this load.
-   > - Anything change? Run [the active host's update-context skill] to refresh a single file without redoing everything."
+   > - Anything change? Just ask your agent to update that file, without redoing everything."
 
 3. **Point to the next session** (session-chain language from progress-state.md):
 
-   > "Your Context module is done: your OS has a real brain. The Tools module gives it hands by connecting your apps. When you're ready, run [the active host's connect skill].
-   >
-   > One more bonus: once your apps are connected, you can re-run [the active host's build-context skill] and approve sent-email samples to sharpen Voice DNA."
+   > "Your Context module is done: your OS has a real brain. Next we give it hands by connecting your apps."
 
 ---
 

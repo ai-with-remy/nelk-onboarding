@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-os",
-  "version": "1.0.0",
-  "description": "Nelk onboarding by AI with Remy. Build your AI OS with /ai-os:build-os, deepen its context with /ai-os:build-context, and connect your tools with /ai-os:connect.",
+  "version": "1.0.1",
+  "description": "Nelk onboarding by AI with Remy. Build your AI OS with /ai-os:build-os and deepen its context with /ai-os:build-context.",
   "author": {
     "name": "AI with Remy",
     "email": "remy@aiwithremy.com",
