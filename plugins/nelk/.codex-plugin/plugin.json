@@ -1,7 +1,7 @@
 {
-  "name": "ai-os",
-  "version": "1.0.1",
-  "description": "Nelk onboarding by AI with Remy. Build your AI OS with /ai-os:build-os and deepen its context with /ai-os:build-context.",
+  "name": "nelk",
+  "version": "2.0.0",
+  "description": "Nelk onboarding by AI with Remy. Run /onboard: a short interview that builds your AI Context folder to upload into your Claude and ChatGPT projects.",
   "author": {
     "name": "AI with Remy",
     "email": "remy@aiwithremy.com",
@@ -11,17 +11,16 @@
   "repository": "https://github.com/ai-with-remy/nelk-onboarding",
   "license": "Proprietary",
   "keywords": [
-    "ai-course",
-    "ai-os",
+    "nelk",
+    "onboarding",
     "context",
-    "productivity",
-    "workspace"
+    "productivity"
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "AI OS",
-    "shortDescription": "Build your AI OS and add your business context",
-    "longDescription": "A guided setup that builds an organized AI OS workspace, and durable business context.",
+    "displayName": "Nelk Onboarding",
+    "shortDescription": "Build your AI Context folder",
+    "longDescription": "A short interview that builds a folder of context files about you, your role and Nelk, ready to upload to any Claude or ChatGPT project.",
     "developerName": "AI with Remy",
     "category": "Productivity",
     "capabilities": [
@@ -30,9 +29,8 @@
     ],
     "websiteURL": "https://aiwithremy.com",
     "defaultPrompt": [
-      "Build my AI operating system foundation",
-      "Deepen my business context",
-      "Add my brands, voice and audience"
+      "Onboard me",
+      "Build my AI Context folder"
     ],
     "brandColor": "#111827",
     "screenshots": []

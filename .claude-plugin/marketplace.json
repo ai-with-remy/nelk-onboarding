@@ -5,13 +5,13 @@
     "email": "remy@aiwithremy.com"
   },
   "metadata": {
-    "description": "AI with Remy onboarding for the Nelk team: build your AI OS, deepen its context, and connect your tools."
+    "description": "AI with Remy onboarding for the Nelk team: build your AI Context folder with /onboard."
   },
   "plugins": [
     {
-      "name": "ai-os",
-      "source": "./plugins/ai-os",
-      "description": "Build your AI OS foundation, deepen its Context, and connect your Tools.",
+      "name": "nelk",
+      "source": "./plugins/nelk",
+      "description": "Run /onboard to build your AI Context folder for your Claude and ChatGPT projects.",
       "author": {
         "name": "AI with Remy",
         "email": "remy@aiwithremy.com"

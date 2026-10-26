@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "ai-os",
+      "name": "nelk",
       "source": {
         "source": "local",
-        "path": "./plugins/ai-os"
+        "path": "./plugins/nelk"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -1,15 +1,20 @@
 # Nelk Onboarding
 
-The AI with Remy onboarding plugin for the Nelk team. It builds your AI OS
-and deepens its context with Nelk's brands, voice and audience.
+The AI with Remy onboarding plugin for the Nelk team. It has one skill,
+`/onboard`: a short interview that builds a folder called **AI Context** on your
+computer. Upload that folder to your Claude and ChatGPT projects, and every
+chat in them already knows who you are, how you write and how Nelk works.
 
 ## Install
+
+**Claude app:** add the plugin marketplace `ai-with-remy/nelk-onboarding`,
+install the `nelk` plugin, then type `/onboard` in a new chat.
 
 **Claude Code** (desktop app or terminal), run these one at a time:
 
 ```text
 /plugin marketplace add ai-with-remy/nelk-onboarding
-/plugin install ai-os@nelk-onboarding
+/plugin install nelk@nelk-onboarding
 ```
 
 **Codex:**
@@ -18,30 +23,31 @@ and deepens its context with Nelk's brands, voice and audience.
 codex plugin marketplace add ai-with-remy/nelk-onboarding
 ```
 
-Then open `/plugins` (or **Settings → Plugins**), install `ai-os`, and start a
-new session.
+Then open `/plugins`, install `nelk`, and start a new session.
 
-## What's included
+## What it builds
 
-The `ai-os` plugin has two skills. In Claude Code you run them as
-`/ai-os:<skill>`, and in Codex as `$ai-os:<skill>`.
+```text
+AI Context/
+├── AGENTS.md
+├── about-me.md
+├── nelk.md
+├── audience.md
+├── voice-dna.md
+└── working-style.md
+```
 
-| Skill | What it does |
-|---|---|
-| `/ai-os:build-os` | A short interview that builds your OS folder: `AGENTS.md`, `MEMORY.md`, your context files and a home for skills |
-| `/ai-os:build-context` | Deepens your context files with your brands, voice, audience and offers |
-
-Codex equivalents: `$ai-os:build-os` and `$ai-os:build-context`.
+Run `/onboard` again anytime to update the folder. In Claude Code the full
+name is `/nelk:onboard`; in Codex it is `$nelk:onboard`.
 
 ## Layout
 
 ```text
 nelk-onboarding/
-├── .claude-plugin/marketplace.json      Claude Code catalogue
+├── .claude-plugin/marketplace.json      Claude catalogue
 ├── .agents/plugins/marketplace.json     Codex catalogue
-└── plugins/ai-os/
+└── plugins/nelk/
     ├── .claude-plugin/plugin.json
     ├── .codex-plugin/plugin.json
-    ├── shared/
-    └── skills/
-```
+    ├── plugin.json
+    └── skills/onboard/
