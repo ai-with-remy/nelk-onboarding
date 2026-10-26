@@ -1,0 +1,40 @@
+# Internal build spec — not part of the shipped plugin
+spec.md
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Scratch
+scratchpad/
+*.tmp
+
+# Python build junk (from skill script syntax checks)
+__pycache__/
+*.pyc
+
+# Internal test/working notes — not part of the shipped plugin
+test-notes.md
+*-brief.md
+
+# ============================================================
+# Secrets & credentials — never commit (2026-08-09 audit)
+# ============================================================
+.env
+.env.*
+!.env.example
+!.env*.example
+*credentials*
+*.pem
+*.key
+*.p12
+*token*
+!*.tokens.ts
+!*tokens*.css
+!*tokens*.json
+secrets/
+.secrets/
+service-account*.json

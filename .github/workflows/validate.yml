@@ -1,0 +1,46 @@
+name: Validate plugin marketplace
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate both plugin formats and all bundled skills
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE_SHA: ${{ github.event.before }}
+        run: |
+          base_sha="${PR_BASE_SHA:-$PUSH_BASE_SHA}"
+          if [[ -n "$base_sha" && ! "$base_sha" =~ ^0+$ ]]; then
+            python3 scripts/validate_repo.py --base-ref "$base_sha"
+          else
+            python3 scripts/validate_repo.py
+          fi
+
+      - name: Check Agent Plugins v1.0.0 conformance
+        run: python3 scripts/check_agent_plugins.py
+
+      - name: Test AI OS workspace layout contracts
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Check clean-room smoke script syntax
+        run: bash -n scripts/smoke_codex_install.sh

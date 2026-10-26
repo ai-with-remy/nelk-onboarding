@@ -1,0 +1,40 @@
+{
+  "name": "ai-os",
+  "version": "1.0.0",
+  "description": "Nelk onboarding by AI with Remy. Build your AI OS with /ai-os:build-os, deepen its context with /ai-os:build-context, and connect your tools with /ai-os:connect.",
+  "author": {
+    "name": "AI with Remy",
+    "email": "remy@aiwithremy.com",
+    "url": "https://aiwithremy.com"
+  },
+  "homepage": "https://aiwithremy.com",
+  "repository": "https://github.com/ai-with-remy/nelk-onboarding",
+  "license": "Proprietary",
+  "keywords": [
+    "ai-course",
+    "ai-os",
+    "context",
+    "productivity",
+    "workspace"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI OS",
+    "shortDescription": "Build your AI OS, add context, and connect tools",
+    "longDescription": "A guided setup that builds an organized AI OS workspace, durable business context, and connected tools.",
+    "developerName": "AI with Remy",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://aiwithremy.com",
+    "defaultPrompt": [
+      "Build my AI operating system foundation",
+      "Deepen my business context",
+      "Help me connect the tools I use"
+    ],
+    "brandColor": "#111827",
+    "screenshots": []
+  }
+}

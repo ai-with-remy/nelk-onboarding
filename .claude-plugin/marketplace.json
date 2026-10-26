@@ -1,0 +1,22 @@
+{
+  "name": "nelk-onboarding",
+  "owner": {
+    "name": "AI with Remy",
+    "email": "remy@aiwithremy.com"
+  },
+  "metadata": {
+    "description": "AI with Remy onboarding for the Nelk team: build your AI OS, deepen its context, and connect your tools."
+  },
+  "plugins": [
+    {
+      "name": "ai-os",
+      "source": "./plugins/ai-os",
+      "description": "Build your AI OS foundation, deepen its Context, and connect your Tools.",
+      "author": {
+        "name": "AI with Remy",
+        "email": "remy@aiwithremy.com"
+      },
+      "homepage": "https://aiwithremy.com"
+    }
+  ]
+}

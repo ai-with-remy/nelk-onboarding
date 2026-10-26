@@ -1,0 +1,18 @@
+Nelk Onboarding plugin marketplace
+Copyright (c) 2026 Remy Gaskell / AI with Remy LLC. All rights reserved.
+
+This plugin is provided for the Nelk team's onboarding with AI with Remy.
+Please do not redistribute or resell it.
+
+No warranty is provided. The AI OS plugin creates and modifies approved files
+in the student's chosen OS location and may update approved host configuration
+while connecting tools or enabling included plugins. Credentials stay in the
+owning app or connection flow; they must not be written to course Context files.
+
+--------------------------------------------------------------------------
+Third-party content
+
+The bundled notification sounds (plugins/ai-os/assets/sounds/) are rendered
+from the sound recipes of the "cuelume" library
+(https://www.npmjs.com/package/cuelume), MIT License, Copyright (c) Daniel
+Belyi.
